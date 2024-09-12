@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marte: O Desafio da Colonização</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #b53939; /* Cor do título em vermelho marciano */
+        }
+
+        .choice-button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #b53939; /* Vermelho marciano */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .choice-button:hover {
+            background-color: #a02d2d; /* Tom mais escuro de vermelho */
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .choice-description {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Marte: O Desafio da Colonização</h1>
+
+    <div class="section">
+        <h2>Capítulo 1: O Primeiro Desafio</h2>
+        <p>Após o pouso, sua equipe enfrenta o primeiro desafio...</p>
+        <button class="choice-button" onclick="showChoice('encosta')">Acampar na Encosta da Montanha</button>
+        <button class="choice-button" onclick="showChoice('planicie')">Acampar na Planície</button>
+    </div>
+
+    <div id="choice-description" class="choice-description">
+        <img id="choice-image" class="image" src="" alt="">
+    </div>
+
+    <script>
+        function showChoice(choice) {
+            let description = '';
+            let imageUrl = '';
+            if (choice === 'encosta') {
+                description = '<h3>Acampar na Encosta da Montanha</h3><p><strong>Vantagens:</strong> A encosta da montanha oferece uma visão panorâmica da região...</p>';
+                imageUrl = 'https://via.placeholder.com/800x300?text=Encosta+da+Montanha'; // Imagem fictícia
+            } else if (choice === 'planicie') {
+                description = '<h3>Acampar na Planície</h3><p><strong>Vantagens:</strong> A planície oferece um terreno mais plano e estável...</p>';
+                imageUrl = 'https://via.placeholder.com/800x300?text=Plan%C3%ADcie'; // Imagem fictícia
+            }
+            document.getElementById('choice-description').innerHTML = description;
+            document.getElementById('choice-image').src = imageUrl;
+        }
+    </script>
+</body>
+</html>
